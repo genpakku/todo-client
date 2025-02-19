@@ -10,7 +10,7 @@ type TodoProps = {
 const Todo = ({ todo }: TodoProps) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [editedTitle, setEditedTitle] = useState<string>(todo.title);
-  const { todos, isLoading, error, mutate } = useTodos();
+  const { todos, mutate } = useTodos();
 
   const handleEdit = async () => {
     setIsEditing(!isEditing);

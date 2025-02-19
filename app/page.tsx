@@ -7,7 +7,7 @@ import { API_URL } from "@/constants/url";
 
 export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { todos, isLoading, error, mutate } = useTodos();
+  const { todos, mutate } = useTodos();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
