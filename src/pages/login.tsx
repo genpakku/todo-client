@@ -15,7 +15,9 @@ const LoginPage: React.FC = () => {
       await login(username, password);
       // ログイン成功後に遷移
       router.push("/todoPage");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

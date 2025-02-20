@@ -62,14 +62,13 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setToken(token);
       fetchUser(token);
     } catch (error) {
-      console.log(error);
       router.push({
         pathname: "/error",
         query: {
-          message:
-            "ログインに失敗しました。ユーザー名またはパスワードを確認してください。",
+          message: `ログインに失敗しました。ユーザー名またはパスワードを確認してください。`,
         },
       });
+      return Promise.reject(error);
     }
   };
 
